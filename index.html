@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PowerPoint-Profi – Zusatzübung</title>
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#e6f5f2;--w1:#bfe5dd;--w2:#d3eee7;--card:#fff;--ink:#141414;--mut:#3b4a4a;--blue:#2f6bc9;--ac:#f6a21a;--acink:#141414;--ln:#141414;--ok:#17703f;--okbg:#dcf3e4;--bad:#b3202a;--badbg:#fbe3e4;--bd:#9ccfc5}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f2f31;--w1:#17494b;--w2:#133b3d;--card:#1a2c30;--ink:#f3f3f3;--mut:#bfd4d2;--blue:#8db8ff;--ln:#e9e9e9;--ok:#7fe0a5;--okbg:#17382a;--bad:#ff9aa0;--badbg:#44171c;--bd:#2f6767}}
+:root[data-theme="dark"]{--bg:#0f2f31;--w1:#17494b;--w2:#133b3d;--card:#1a2c30;--ink:#f3f3f3;--mut:#bfd4d2;--blue:#8db8ff;--ln:#e9e9e9;--ok:#7fe0a5;--okbg:#17382a;--bad:#ff9aa0;--badbg:#44171c;--bd:#2f6767}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;color:var(--ink);font:20px/1.4 "Patrick Hand","Comic Sans MS","Chalkboard SE",cursive;background:radial-gradient(circle at 8% 4%,var(--w1),transparent 38%),radial-gradient(circle at 96% 40%,var(--w2),transparent 42%),radial-gradient(circle at 15% 98%,var(--w1),transparent 40%),var(--bg)}
+main{max-width:760px;margin:0 auto;padding:20px 16px 48px}
+.hd{display:flex;justify-content:space-between;align-items:center;gap:12px}
+h1{font-weight:400;font-size:clamp(44px,12vw,70px);line-height:1;margin:0;color:var(--ac)}
+.sub0{margin:4px 0 0;font-size:22px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+.tab{min-width:46px;height:46px;border-radius:50%;border:2.5px solid var(--ln);background:var(--card);color:var(--ink);font:inherit;font-size:21px;cursor:pointer}
+.tab.on{background:var(--ac);color:#141414}
+.tab.fin:after{content:" ✓";font-size:15px}
+.card{background:var(--card);border:3px solid var(--ln);border-radius:5px 3px 6px 3px;overflow:hidden}
+.in{padding:14px 16px 18px}
+.tip{margin:0 0 10px;font-weight:700}
+.banner{display:flex;align-items:center;justify-content:center;gap:12px;border-top:3px solid var(--ln);padding:8px 12px;font-size:clamp(28px,7vw,42px);line-height:1.1;text-align:center;background:linear-gradient(100deg,var(--w1),var(--w2) 50%,var(--w1))}
+.row{display:block;padding:10px 12px;margin:10px 0;border:2px solid var(--ln);border-radius:4px;min-width:0}
+.row.ok{background:var(--okbg);border-color:var(--ok)}
+.row.bad{background:var(--badbg);border-color:var(--bad)}
+legend{padding:0 6px}
+.op{display:flex;gap:10px;align-items:center;padding:6px 4px;cursor:pointer;color:var(--blue)}
+.op input{width:22px;height:22px;flex:none;accent-color:var(--ac)}
+.fix{color:var(--bad);font-weight:700;margin-top:6px}
+.good{color:var(--ok);font-weight:700;margin-top:6px}
+button{font:inherit;color:inherit}
+.main,.sec{font-size:21px;border-radius:6px;padding:10px 20px;cursor:pointer;border:2.5px solid var(--ln);margin:8px 8px 0 0}
+.main{background:var(--ac);color:#141414}
+.sec{background:var(--card)}
+button:focus-visible,input:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.res{font-size:23px;margin:10px 0 0}
+.badge{border:3px dashed var(--ln);background:var(--w2);border-radius:10px;padding:16px;text-align:center;margin-top:16px;font-size:28px;color:var(--ac)}
+.badge small{color:var(--ink);font-size:19px}
+.nav{display:flex;justify-content:space-between;margin-top:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.chip{display:flex;gap:8px;align-items:center;width:100%;text-align:left;margin:0 0 8px;padding:8px 10px;border:3px solid var(--ln);border-radius:5px;background:var(--card);color:var(--blue);cursor:pointer;min-height:58px}
+.chip.on{background:var(--okbg)}
+.bd{flex:none;width:26px;height:26px;border-radius:13px;color:#fff;text-align:center;line-height:26px;font-size:16px}
+.ord{display:flex;gap:8px;align-items:center;padding:8px 12px;margin:8px 0;border:2px solid var(--ln);border-radius:4px}
+.ord.ok{background:var(--okbg);border-color:var(--ok)}.ord.bad{background:var(--badbg);border-color:var(--bad)}
+.ord span{flex:1;color:var(--blue)}.ord button{width:44px;height:44px;border-radius:6px;border:2px solid var(--ln);background:var(--card);cursor:pointer}
+.pairs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.pk{padding:6px;border:3px solid var(--ln);border-radius:6px;background:var(--card);cursor:pointer;text-align:center}
+.pk.on{border-color:var(--ac);box-shadow:0 0 0 3px var(--ac)}.pk.ok{border-color:var(--ok);background:var(--okbg)}.pk.bad{border-color:var(--bad);background:var(--badbg)}
+.sl{position:relative;min-height:118px;padding:10px;border:1px solid #8888;border-radius:6px;overflow:hidden;line-height:1.3;text-align:left;font-family:Arial,sans-serif}
+.cb{display:flex;gap:12px;padding:8px 4px;border-bottom:1px solid var(--bd);cursor:pointer;color:var(--blue)}
+.cb input{width:24px;height:24px;flex:none;accent-color:var(--ac)}
+</style></head><body><main>
+<header class="hd"><div><h1>PowerPoint</h1><p class="sub0">Eine Präsentation gestalten – Zusatzübung für alle, die mit Halloween fertig sind</p></div><span id="mk"></span></header>
+<div id="app"></div>
+</main>
+<script>
+const sh=a=>a.sort(()=>Math.random()-.5);
+const sl=(bg,col,h,hs,b,ts,x="")=>`<div class="sl" style="background:${bg};color:${col}"><div style="font-size:${hs}px;font-weight:700">${h}</div><div style="font-size:${ts}px">${b}</div>${x}</div>`;
+const T1="Am 31. Oktober verkleiden sich Kinder und sammeln Süßigkeiten.",LONG="Halloween wird am 31. Oktober gefeiert und stammt aus Irland. Kinder ziehen verkleidet von Haus zu Haus und sammeln Süßigkeiten.",BUL="• Datum: 31. Oktober<br>• Ursprung: Irland<br>• Süßes oder Saures";
+const LI="#fff7e6",DK="#2d1b4e",KU=(s)=>`<div style="position:absolute;right:10px;bottom:6px;font-size:34px;${s}">🎃</div>`;
+const REG=["Start","Einfügen","Entwurf","Übergänge","Animationen","Bildschirmpräsentation"];
+const TF=["Richtig","Falsch"];
+const SEC=[
+{t:"Register verbinden",k:"match",i:"Tippe erst ein Register (A–F) an, dann die passende Funktion. Zum Ändern einfach neu tippen.",L:REG,R:[["Schriftfarbe ändern",0],["Bilder und Formen einfügen",1],["Fertige Designs für die Folien",2],["Übergang zwischen zwei Folien",3],["Ein Bild animieren",4],["Präsentation starten",5]]},
+{t:"Folienreihenfolge",k:"order",i:"Bringe die Folien mit ▲ und ▼ in die richtige Reihenfolge (oben = vorne).",items:["Titelfolie (Name, Klasse, Thema)","Inhaltsverzeichnis","Vielen Dank für eure Aufmerksamkeit","Quellenangabe der Bilder und Informationen"]},
+{t:"Welche Folie ist besser?",k:"pick",i:"Tippe auf die Folie, die die Gestaltungsregeln besser einhält.",q:[
+[sl("#fde047","#fb923c","Halloween",20,T1,12),sl(LI,DK,"Halloween",20,T1,12),"B","Hell-dunkel-Kontrast: heller Hintergrund, dunkle Schrift. Orange auf Gelb ist kaum lesbar."],
+[sl(LI,DK,"Halloween",12,T1,12),sl(LI,DK,"Halloween",22,T1,12),"B","Die Überschrift ist größer als der Text."],
+[sl(LI,DK,"Halloween",20,LONG,12),sl(LI,DK,"Halloween",20,BUL,12),"B","Stichpunkte statt Fließtext. Ganze Sätze nur, wenn es nötig ist."],
+[sl("#fff","#e11d48","Halloween",20,'• Kürbis<br><span style="color:#16a34a">• Geister</span><br><span style="color:#2563eb">• Fledermäuse</span>',13),sl(LI,"#c2410c","Halloween",20,'<span style="color:'+DK+'">• Kürbis<br>• Geister<br>• Fledermäuse</span>',13),"B","In einer Farbfamilie bleiben (hier Orange, Lila, Schwarz) – nicht jede Zeile in einer anderen Farbe."],
+[sl(LI,DK,"Halloween",20,"Ein Kürbis!",13,KU("transform:scale(2.4,.6);filter:blur(1.2px)")),sl(LI,DK,"Halloween",20,"Ein Kürbis!",13,KU("")),"B","Bilder dürfen nicht verpixelt oder verzogen sein. Beim Vergrößern immer die Ecken ziehen."],
+[sl("repeating-linear-gradient(45deg,#f97316 0 10px,#111 10px 20px)","#fff","Halloween",20,T1,12),sl(LI,DK,"Halloween",20,T1,12,'<div style="position:absolute;right:0;top:0;bottom:0;width:18px;background:#e5650a"></div>'),"B","Ruhiger Hintergrund, passende Farbe, Formen nutzen. Eine Grafik als Hintergrund nur bei der 1. Folie."]]},
+{t:"Fehler-Detektiv",k:"multi",i:"Diese Folie hat Gestaltungsfehler. Kreuze alle Fehler an, die du findest.",slide:sl("#fde047","#fb923c","Halloween",12,LONG,12,KU("transform:scale(2.4,.6);filter:blur(1.2px)")),o:[["Die Überschrift ist nicht größer als der Text.",1],["Orange Schrift auf gelbem Hintergrund: schlechter Kontrast.",1],["Langer Fließtext statt Stichpunkte.",1],["Der Kürbis ist verzogen.",1],["Die Überschrift ist zu groß.",0],["Es steht zu wenig Text auf der Folie.",0]]},
+{t:"Regeln: richtig oder falsch?",k:"mc",i:"Stimmt die Aussage?",q:[
+["Eine Grafik als Hintergrund nutze ich auf jeder Folie.",TF,"Falsch"],["Ich nutze höchstens zwei verschiedene Animationen.",TF,"Richtig"],["Für die ganze Präsentation wähle ich denselben Übergang.",TF,"Richtig"],["Die Hintergrundfarbe passt zum Thema (z. B. Umwelt = grün).",TF,"Richtig"],["Bilder dürfen verpixelt sein, wenn sie lustig sind.",TF,"Falsch"],["Auf jeder Folie nutze ich eine andere Schriftgröße.",TF,"Falsch"]]},
+{t:"Tipps und Tricks",k:"mc",sh:1,i:"Kreuze die richtige Antwort an.",q:[
+["Wo findest du Überschriften-Schriftarten passend zum Thema?",["www.fontmeme.com","www.wikipedia.de","www.wetter.de"],"www.fontmeme.com"],
+["Woher kommen kleine, kostenlose Cliparts?",["www.pixabay.com","www.shutterstock.com","www.maps.google.de"],"www.pixabay.com"],
+["Was hängst du an die Bildersuche an, damit das Bild freigestellt ist?",["png","groß","gratis"],"png"],
+["Wie suchst du am besten nach Bildern?",["mit englischen Begriffen (z. B. pumpkin clipart png)","nur mit dem Wort „Bild“","mit einem Screenshot"],"mit englischen Begriffen (z. B. pumpkin clipart png)"],
+["Welche Taste beendet die Präsentation?",["Esc","Entf","Tab"],"Esc"],
+["Wie startest du die Präsentation von der ersten Folie an?",["Bildschirmpräsentation → Von Beginn an","Entwurf → Von Beginn an","Start → Von Beginn an"],"Bildschirmpräsentation → Von Beginn an"]]}
+];
+const C=["Meine Überschriften sind größer als der Text.","Die Schrift ist dunkel, der Hintergrund hell.","Ich bleibe in einer Farbfamilie (passend zu Halloween).","Meine Bilder passen zum Thema und sind weder verpixelt noch verzogen.","Ich habe Stichpunkte statt langem Fließtext geschrieben.","Ich nutze höchstens zwei verschiedene Animationen.","Ich habe für die ganze Präsentation denselben Übergang gewählt.","Ich habe Titelfolie, Inhaltsverzeichnis, Dankesfolie und Quellenangabe."];
+const col=i=>`hsl(${i*58+8} 70% 40%)`,LT="ABCDEF";
+let cur=0;const done=SEC.map(()=>0),chk=C.map(()=>0);
+const st=SEC.map(s=>{
+ if(s.k=="match"){sh(s.R);return{p:s.L.map(()=>-1),s:-1}}
+ if(s.k=="order")return sh(s.items.slice());
+ if(s.k=="pick"){s.q.forEach(q=>{if(Math.random()<.5){q.splice(0,2,q[1],q[0]);q[2]=q[2]=="A"?"B":"A"}});return s.q.map(()=>"")}
+ if(s.k=="multi")return s.o.map(()=>-1);
+ s.q.forEach(q=>{if(s.sh)q[1]=sh(q[1].slice())});return s.q.map(()=>"")});
+function score(k){const s=SEC[k],a=st[k];
+ if(s.k=="match")return a.p.filter((v,i)=>v>=0&&s.R[v][1]==i).length;
+ if(s.k=="order")return a.filter((v,i)=>v==s.items[i]).length;
+ if(s.k=="multi")return s.o.filter((o,i)=>(a[i]==1?1:0)==o[1]).length;
+ return s.q.filter((q,i)=>a[i]==q[2]).length}
+const max=k=>{const s=SEC[k];return s.k=="match"?s.L.length:s.k=="order"?s.items.length:s.k=="multi"?s.o.length:s.q.length};
+const go=k=>{cur=k;render();scrollTo(0,0)},check=()=>{done[cur]=1;render()};
+function again(){const s=SEC[cur];if(s.k=="match")st[cur]={p:s.L.map(()=>-1),s:-1};else if(s.k=="order")sh(st[cur]);else if(s.k=="multi")st[cur]=s.o.map(()=>-1);else st[cur]=s.q.map(()=>"");done[cur]=0;render()}
+function mSel(i){const a=st[cur];if(done[cur])return;a.p[i]=-1;a.s=i;render()}
+function mPut(j){const a=st[cur];if(done[cur]||a.s<0)return;const o=a.p.indexOf(j);if(o>=0)a.p[o]=-1;a.p[a.s]=j;a.s=-1;render()}
+function mv(i,d){const a=st[cur];if(done[cur]||i+d<0||i+d>=a.length)return;[a[i],a[i+d]]=[a[i+d],a[i]];render()}
+const pickA=(i,v)=>{if(!done[cur]){st[cur][i]=v;render()}};
+function body(k){const s=SEC[k],a=st[k],d=done[k];let h="";
+ if(s.k=="match"){const bd=i=>`<b class="bd" style="background:${col(i)}">${LT[i]}</b>`;
+  h+='<div class="two"><div>'+s.L.map((l,i)=>`<button class="chip${a.s==i?" on":""}" style="border-color:${a.p[i]>=0||a.s==i?col(i):""}" onclick="mSel(${i})" ${d?"disabled":""}>${bd(i)}${l}</button>`).join("")+"</div><div>"+s.R.map((r,j)=>{const o=a.p.indexOf(j);return `<button class="chip" style="border-color:${o>=0?col(o):""}" onclick="mPut(${j})" ${d?"disabled":""}>${o>=0?bd(o):""}${r[0]}</button>`}).join("")+"</div></div>";
+  if(d)s.L.forEach((l,i)=>{const r=s.R.find(x=>x[1]==i);h+=a.p[i]>=0&&s.R[a.p[i]][1]==i?`<div class="good">✓ ${l}: ${r[0]}</div>`:`<div class="fix">✗ ${l}: ${r[0]}</div>`})}
+ if(s.k=="order")a.forEach((v,i)=>{const c=d?(v==s.items[i]?" ok":" bad"):"";h+=`<div class="ord${c}"><b>${i+1}.</b><span>${v}</span><button onclick="mv(${i},-1)" aria-label="nach oben" ${d?"disabled":""}>▲</button><button onclick="mv(${i},1)" aria-label="nach unten" ${d?"disabled":""}>▼</button></div>`});
+ if(s.k=="pick"){s.q.forEach((q,i)=>{const c=n=>"pk"+(a[i]==n?" on":"")+(d&&q[2]==n?" ok":d&&a[i]==n?" bad":"");
+  h+=`<div class="row"><div class="pairs">${["A","B"].map((n,x)=>`<button class="${c(n)}" onclick="pickA(${i},'${n}')" aria-label="Folie ${n}">${q[x]}<div>Folie ${n}</div></button>`).join("")}</div>${d?`<div class="${a[i]==q[2]?"good":"fix"}">${a[i]==q[2]?"✓ Richtig!":"✗ Besser ist Folie "+q[2]+"."}<br>💡 ${q[3]}</div>`:""}</div>`})}
+ if(s.k=="multi"){h+=`<div class="row">${s.slide}</div>`+s.o.map((o,i)=>{const c=d?((a[i]==1?1:0)==o[1]?"ok":"bad"):"";return `<label class="op row ${c}" style="margin:6px 0"><input type="checkbox" ${a[i]==1?"checked":""} ${d?"disabled":""} onchange="st[${k}][${i}]=this.checked?1:-1">${o[0]}</label>`}).join("")}
+ if(s.k=="mc")s.q.forEach((q,i)=>{const c=d?(a[i]==q[2]?" ok":" bad"):"";h+=`<fieldset class="row${c}"><legend>${q[0]}</legend>${q[1].map(o=>`<label class="op"><input type="radio" name="r${k}_${i}" ${a[i]==o?"checked":""} ${d?"disabled":""} onchange="st[${k}][${i}]=this.value" value="${o}">${o}</label>`).join("")}${c==" bad"?`<div class="fix">Richtig: ${q[2]}</div>`:""}</fieldset>`});
+ return h}
+function render(){
+ let h='<div class="tabs">'+SEC.map((s,k)=>`<button class="tab${k==cur?" on":""}${done[k]?" fin":""}" onclick="go(${k})" aria-label="Abschnitt ${k+1}: ${s.t}">${k+1}</button>`).join("")+`<button class="tab${cur==SEC.length?" on":""}" onclick="go(${SEC.length})" aria-label="Abschluss">🏆</button></div>`;
+ if(cur<SEC.length){const s=SEC[cur];
+  h+=`<div class="card"><div class="in"><p class="tip">💡 ${s.i}</p>${body(cur)}`;
+  h+=done[cur]?`<p class="res">${score(cur)} von ${max(cur)} richtig ${score(cur)==max(cur)?"🎉":""}</p><button class="sec" onclick="again()">Nochmal versuchen</button>`:`<button class="main" onclick="check()">Prüfen</button>`;
+  h+=`</div><div class="banner">${kugel(KC[cur%4],52)}${cur+1}. ${s.t}</div></div><div class="nav">${cur>0?`<button class="sec" onclick="go(${cur-1})">Zurück</button>`:"<span></span>"}<button class="sec" onclick="go(${cur+1})">Weiter</button></div>`}
+ else{let a=0,b=0,o=0;SEC.forEach((s,k)=>{b+=max(k);if(done[k])a+=score(k);else o++});const f=chk.filter(Boolean).length;
+  h+=`<div class="card"><div class="in"><p class="tip">💡 Öffne deine Präsentation und hake nur ab, was wirklich stimmt. Verbessere den Rest!</p>`;
+  C.forEach((t,i)=>h+=`<label class="cb"><input type="checkbox" ${chk[i]?"checked":""} onchange="chk[${i}]=this.checked?1:0;render()"><span>${t}</span></label>`);
+  h+=`<p class="res">${f} von ${C.length} Punkten erfüllt</p><p class="res">Übungen: ${a} von ${b} richtig${o?` – noch ${o} Abschnitt${o>1?"e":""} offen`:""}</p>`;
+  if(!o&&a/b>=.8&&f==C.length)h+=`<div class="badge">🎃 PowerPoint-Profi!<br><small>Zeige diesen Bildschirm deiner Lehrkraft.</small></div>`;
+  else if(!o&&a/b<.8)h+=`<p>Wiederhole die Abschnitte mit roten Antworten – dann klappt es!</p>`;
+  h+=`</div><div class="banner">${kugel("#f08a96",52)}Check deine Präsentation</div></div><div class="nav"><button class="sec" onclick="go(${SEC.length-1})">Zurück</button></div>`}
+ document.getElementById("app").innerHTML=h}
+const KC=["#8fd3d6","#8fd08a","#f08a96","#8aa8ec"];
+function kugel(c,n){return `<svg viewBox="0 0 60 60" width="${n}" height="${n}" aria-hidden="true"><circle cx="30" cy="30" r="26" fill="${c}" stroke="#141414" stroke-width="3"/><circle cx="22" cy="25" r="3" fill="#141414"/><circle cx="38" cy="25" r="3" fill="#141414"/><path d="M19 36q11 12 22 0z" fill="#e8626f" stroke="#141414" stroke-width="2.5" stroke-linejoin="round"/></svg>`}
+document.getElementById("mk").innerHTML=kugel(KC[0],78);
+render();
+</script></body></html>
